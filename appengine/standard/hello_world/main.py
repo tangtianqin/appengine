@@ -42,6 +42,7 @@ class MainPage(webapp2.RequestHandler):
             'user': user,
             'login_url': login_url,
             'logout_url': logout_url,
+            'userprefs': userprefs,
         }
         self.response.out.write(template.render(context))
         
