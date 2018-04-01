@@ -48,12 +48,6 @@ class MainPage(webapp2.RequestHandler):
         
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-    ('/rest/.*', rest.Dispatcher),
 ], debug=True)
 
 # configure the rest dispatcher to know what prefix to expect on request urls
-rest.Dispatcher.base_url = "/rest"
-
-# add all models from the current module, and/or...
-rest.Dispatcher.add_models_from_module(__name__)
-
